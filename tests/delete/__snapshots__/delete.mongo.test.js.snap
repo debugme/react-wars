@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`delete document from characters collection should allow an existing character to be deleted 1`] = `null`;
+
+exports[`delete document from characters collection should return null on delete of non-existent character 1`] = `null`;
