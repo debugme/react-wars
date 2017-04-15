@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint schemas",
-    "pretest": "npm run lint",
-    "test": "jest --coverage"
+    "lint": "eslint source",
+    "test": "npm run lint; jest --coverage"
   },
   "keywords": [],
   "author": "",

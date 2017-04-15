@@ -4,26 +4,28 @@ import dotenv from 'dotenv'
 import chai from 'chai'
 import chaiHttp from 'chai-http'
 import chaiAsPromised from 'chai-as-promised'
-import mongoose from 'mongoose'
 
 import characters from './read.data.json'
 import Character from '../../../source/database/Character'
 import buildServer from '../../../source/server/buildServer'
+import buildDatabase from '../../../source/database/buildDatabase'
 
 describe('read characters with GET /characters', () => {
 
+  let testDatabase = null
   let testServer = null
 
   beforeAll(() => {
     chai.use(chaiHttp)
     chai.use(chaiAsPromised)
     dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') })
+    testDatabase = buildDatabase(process.env)
     testServer = chai.request(buildServer(process.env))
   })
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => mongoose.connection.close())
+      .then(() => testDatabase.connection.close())
       .then(done)
   })
 
