@@ -1,4 +1,4 @@
-import Character from '../../database/Character'
+import Character from '../../database/models/Character'
 
 const readCharacters = (request, response, next) => {
   const { _id } = request.params
@@ -8,4 +8,4 @@ const readCharacters = (request, response, next) => {
     .catch(error => {response.status(400).send(error.toString()); next()})
 }
 
-export { readCharacters }
+export default readCharacters

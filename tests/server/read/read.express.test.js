@@ -6,13 +6,14 @@ import chaiHttp from 'chai-http'
 import chaiAsPromised from 'chai-as-promised'
 
 import characters from './read.data.json'
-import Character from '../../../source/database/Character'
+import Character from '../../../source/database/models/Character'
 import buildServer from '../../../source/server/buildServer'
 import buildDatabase from '../../../source/database/buildDatabase'
 
 describe('read characters with GET /characters', () => {
 
   let testDatabase = null
+  let mockServer = null
   let testServer = null
 
   beforeAll(() => {
@@ -20,12 +21,14 @@ describe('read characters with GET /characters', () => {
     chai.use(chaiAsPromised)
     dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') })
     testDatabase = buildDatabase(process.env)
-    testServer = chai.request(buildServer(process.env))
+    testServer = buildServer(process.env)
+    mockServer = chai.request(testServer)
   })
 
   afterAll((done) => {
     Character.collection.remove()
       .then(() => testDatabase.connection.close())
+      .then(() => testServer.close())
       .then(done)
   })
 
@@ -42,7 +45,7 @@ describe('read characters with GET /characters', () => {
     const byName = (a, b) => a.name.localeCompare(b.name)
     const getData = data => _.pick(data, keys)
     const expectData = characters.sort(byName)
-    testServer.get('/characters')
+    mockServer.get('/characters')
       .then((response) => {
         const actualData = response.body.sort(byName).map(getData)
         expect(actualData).toEqual(expectData)
@@ -57,14 +60,14 @@ describe('read characters with GET /characters', () => {
     const getData = data => _.pick(data, keys)
     const expectData = characters[0]
     Character.findOne({ name })
-      .then(data => testServer.get(`/characters/${data._id}`))
+      .then(data => mockServer.get(`/characters/${data._id}`))
       .then((response) => getData(response.body[0]))
       .then(actualData => expect(actualData).toEqual(expectData))
       .then(done)
   })
 
   it('should return error for invalid requested character', (done) => {
-    testServer.get('/characters/banana')
+    mockServer.get('/characters/banana')
       .catch((error) => {
         expect(error.response.error.status).toBe(400)
         expect(error.response.error.toString()).toBe('Error: cannot GET /characters/banana (400)')

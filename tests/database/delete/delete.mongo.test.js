@@ -2,7 +2,7 @@ import path from 'path'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-import Character from '../../../source/database/Character'
+import Character from '../../../source/database/models/Character'
 import fields from './delete.data.json'
 
 describe('delete document from characters collection', () => {

@@ -3,7 +3,7 @@ import path from 'path'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-import Character from '../../../source/database/Character'
+import Character from '../../../source/database/models/Character'
 import fields from './read.data.json'
 
 describe('read document from characters collection', () => {

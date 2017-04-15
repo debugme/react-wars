@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node index",
     "lint": "eslint source",
     "test": "npm run lint; jest --coverage"
   },

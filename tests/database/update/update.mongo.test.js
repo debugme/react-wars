@@ -3,7 +3,7 @@ import path from 'path'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-import Character from '../../../source/database/Character'
+import Character from '../../../source/database/models/Character'
 import fields from './update.data.json'
 
 describe('update existing document in characters collection', () => {

@@ -1,16 +1,15 @@
 import express from 'express'
-
-import {readCharacters} from './routes/readCharacters'
+import deleteCharacters from './routes/deleteCharacters'
+import readCharacters from './routes/readCharacters'
 
 const buildServer = (options) => {
-  const { port} = options
-  const server = express()
-  // // server.post('/characters', createCharacter)
-  server.get('/characters', readCharacters)
-  server.get('/characters/:_id', readCharacters)
-  // // server.patch('/characters/:id', updateCharacter)
-  // // server.delete('/characters/:id', deleteCharacter)
-  server.listen(port)
+  const instance = express()
+  // server.post('/characters', createCharacters)
+  instance.get('/characters', readCharacters)
+  instance.get('/characters/:_id', readCharacters)
+  instance.delete('/characters/:_id', deleteCharacters)
+  // // instance.patch('/characters/:_id', updateCharacter)
+  const server = instance.listen(options.port)
   return server
 }
 
