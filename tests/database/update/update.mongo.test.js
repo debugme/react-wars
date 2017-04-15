@@ -3,18 +3,15 @@ import path from 'path'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-import schema from '../../schemas/CharacterSchema'
+import Character from '../../../source/database/Character'
 import fields from './update.data.json'
 
 describe('update existing document in characters collection', () => {
 
-  let Character = null
-
   beforeAll((done) => {
     mongoose.Promise = global.Promise
-    dotenv.config({ path: path.resolve(__dirname, '..', '.env') })
+    dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') })
     const saveCharacter = () => new Character(fields).save()
-    Character = mongoose.model('Characters', schema)
     mongoose.connect(process.env.mongodbUri)
       .then(saveCharacter)
       .then(done)
