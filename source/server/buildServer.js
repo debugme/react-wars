@@ -1,10 +1,14 @@
 import express from 'express'
-import deleteCharacters from './routes/deleteCharacters'
+import bodyParser from 'body-parser'
+import createCharacters from './routes/createCharacters'
 import readCharacters from './routes/readCharacters'
+import deleteCharacters from './routes/deleteCharacters'
 
 const buildServer = (options) => {
   const instance = express()
-  // server.post('/characters', createCharacters)
+  instance.use(bodyParser.json())
+  instance.use(bodyParser.urlencoded({ extended: true }))
+  instance.post('/characters', createCharacters)
   instance.get('/characters', readCharacters)
   instance.get('/characters/:_id', readCharacters)
   instance.delete('/characters/:_id', deleteCharacters)
