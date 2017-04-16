@@ -33,13 +33,13 @@ body, header, footer, main, .container  {
 
 .content {
   width: 100vw;
-  flex: auto;
+  min-height: calc(100vh - 3.5em - 3.5em);
   padding: 0 1em 0 1em;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
   }
-  &-error {
+  &-info {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,51 +47,6 @@ body, header, footer, main, .container  {
     &-card {
       margin: 1em;
       padding: 1em;
-    }
-  }
-  &-table {
-    margin: 2em 1em 2em 1em;
-    padding: 0.5em 2em;
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    &-column {
-      display: flex;
-      flex-direction: column;
-      flex: auto;
-      align-items: stretch;
-    }
-  }
-  &-stack {
-    padding-top: 1em;
-    margin: 0em 0 0em 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100vh;
-    overflow: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    &-column {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      flex-basis: 50%;
-      flex-grow: 1;
-      flex-shrink: 1;
-      align-items: stretch;
-      &-card {
-        padding: 1em;
-        flex: none;
-        margin: 1em;
-      }
-      &-card:last-of-type {
-        margin-bottom: 2em;
-      }
     }
   }
 }

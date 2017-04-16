@@ -3,9 +3,6 @@
   .header {
     padding: 0 3em;
   }
-  .content-stack {
-    display: none;
-  }
   .footer {
     padding: 0 3em;
     &-view {
@@ -23,18 +20,6 @@
 @media screen and (max-width: 1850px) {
   .header {
     padding: 0 2em;
-  }
-  .content {
-    &-stack {
-      display: none;
-    }
-    &-table {
-      &-column {
-        &.large {
-          display: none;
-        }
-      }
-    }
   }
   .footer {
     padding: 0 2em;
@@ -55,22 +40,6 @@
     padding: 0 1em;
     &-name:last-of-type {
       display: none;
-    }
-  }
-  .content {
-    &-stack {
-      display: flex;
-    }
-    &-table {
-      display: none;
-      &-column {
-        &.medium {
-          display: none;
-        }
-        &.large {
-          display: none;
-        }
-      }
     }
   }
   .footer {
@@ -99,29 +68,6 @@
     }
     &-name {
       display: none;
-    }
-  }
-  .content {
-    &-stack {
-      &-column {
-        &.small {
-          display: none;
-        }
-      }
-    }
-    &-table {
-      display: none;
-      &-column {
-        &.small {
-          display: none;
-        }
-        &.medium {
-          display: none;
-        }
-        &.large {
-          display: none;
-        }
-      }
     }
   }
   .footer {
