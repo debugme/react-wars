@@ -5,10 +5,10 @@ import chai from 'chai'
 import chaiHttp from 'chai-http'
 import chaiAsPromised from 'chai-as-promised'
 
-import characters from './server.test.json'
-import Character from '../../source/database/character.model'
-import buildServer from '../../source/server/build.server'
-import buildDatabase from '../../source/database/build.database'
+import characters from './test.data.json'
+import Character from '../source/database/character.model'
+import buildServer from '../source/server/build.server'
+import buildDatabase from '../source/database/build.database'
 
 describe('server route handling', () => {
 
@@ -19,7 +19,7 @@ describe('server route handling', () => {
   beforeAll(() => {
     chai.use(chaiHttp)
     chai.use(chaiAsPromised)
-    dotenv.config({ path: path.resolve(__dirname, '..', '.env') })
+    dotenv.config({ path: path.resolve(__dirname, '.env') })
     testServer = buildServer(process.env)
     mockServer = chai.request(testServer)
     testDatabase = buildDatabase(process.env)
@@ -134,6 +134,19 @@ describe('server route handling', () => {
         .then(data => data.hair_color)
         .then(color => expect(color).toBe(updates.hair_color))
         .then(done)
+    })
+
+    it('should not update a character when incorrect id is provided', (done) => {
+      const options = { name: characters[0].name }
+      const updates = { ear_color: 'purple' }
+      Character.findOne(options)
+        .then(character => `/characters/${character.name}`)
+        .then(query => mockServer.patch(query).send(updates))
+        .catch((error) => {
+          expect(error.response.error.status).toBe(400)
+          expect(error.response.error.toString().startsWith('Error: cannot PATCH /characters/'))
+          done()
+        })
     })
 
     it('should not update a character when incorrect data is provided', (done) => {
