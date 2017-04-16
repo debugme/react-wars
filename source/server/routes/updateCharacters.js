@@ -12,7 +12,11 @@ const updateCharacters = (request, response, next) => {
         return response.status(422).end()
       response.status(200).end()
     })
-    .catch(error => {response.status(400).send(error.toString()); next()})
+    .catch(error => {
+      response.status(400)
+      response.send(error.toString())
+      next()
+    })
 }
 
 export default updateCharacters

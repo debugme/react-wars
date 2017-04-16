@@ -18,7 +18,7 @@ describe('database operation handling', () => {
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => mongoose.connection.close())
+      .then(() => mongoose.disconnect())
       .then(done)
   })
 

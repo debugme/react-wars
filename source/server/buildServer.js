@@ -5,8 +5,6 @@ import readCharacters from './routes/readCharacters'
 import updateCharacters from './routes/updateCharacters'
 import deleteCharacters from './routes/deleteCharacters'
 
-
-
 const buildServer = (options) => {
   const instance = express()
   instance.use(bodyParser.json())
