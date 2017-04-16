@@ -19,16 +19,15 @@ describe('delete character with DELETE /characters', () => {
     chai.use(chaiHttp)
     chai.use(chaiAsPromised)
     dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') })
-    testDatabase = buildDatabase(process.env)
     testServer = buildServer(process.env)
     mockServer = chai.request(testServer)
+    testDatabase = buildDatabase(process.env)
   })
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => testDatabase.connection.close())
-      .then(() => testServer.close())
-      .then(done)
+      .then(() => testDatabase.disconnect())
+      .then(() => testServer.close(done))
   })
 
   beforeEach((done) => {
@@ -42,7 +41,7 @@ describe('delete character with DELETE /characters', () => {
   it('should delete character whose id is supplied', (done) => {
     const options = { name: characters[0].name }
     Character.findOne(options)
-      .then(character => Promise.resolve(`/characters/${character._id}`))
+      .then(character => `/characters/${character._id}`)
       .then(query => mockServer.delete(query))
       .then(response => {
         expect(response.status).toBe(204)

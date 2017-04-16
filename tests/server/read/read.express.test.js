@@ -20,16 +20,19 @@ describe('read characters with GET /characters', () => {
     chai.use(chaiHttp)
     chai.use(chaiAsPromised)
     dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') })
-    testDatabase = buildDatabase(process.env)
     testServer = buildServer(process.env)
     mockServer = chai.request(testServer)
+    testDatabase = buildDatabase(process.env)
   })
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => testDatabase.connection.close())
-      .then(() => testServer.close())
-      .then(done)
+      .then(() => testDatabase.disconnect())
+      .then(() => testServer.close(done))
+  })
+
+  it('read.express.test.js', () => {
+    expect(true).toBe(true)
   })
 
   beforeEach((done) => {

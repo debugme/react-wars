@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index",
-    "lint": "eslint source",
-    "test": "npm run lint; jest --coverage"
+    "lint": "eslint source tests",
+    "pretest": "npm run lint",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
+    "freeport": "^1.0.5",
     "mongoose": "^4.9.4"
   },
   "devDependencies": {
@@ -35,7 +37,8 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "source/database/*.js"
+      "source/database/*.js",
+      "source/server/*.js"
     ],
     "coverageThreshold": {
       "global": {
