@@ -1,0 +1,114 @@
+@import '~VariablesPartial';
+@import '~CardLayoutMixin';
+
+@font-face {
+  font-family: $icon-font;
+  src: url('../fonts/fontello.woff2') format('woff2');
+}
+
+.container {
+  background-color: $blue-color;
+  font-family: $text-font;
+  font-weight: 200;
+  font-size: 1em;
+}
+
+.header {
+  background-color: $black-color;
+  color: $blue-color;
+  &-icon {
+    color: $red-color;
+    font-family: $icon-font;
+    font-style: normal;
+    font-size: 1.3rem;
+  }
+  &-logo {
+    letter-spacing: 0.2em;
+  }
+  &-avatar {
+    border-radius: 2em;
+  }
+}
+
+.content {
+  &-error {
+    &-card {
+      @include card-layout;
+      font-weight: 300;
+      font-size: 1.5em;
+      font-style: italic;
+      color: $black-color;
+    }
+  }
+  &-table {
+    @include card-layout;
+    color: $black-color;
+    &-column {
+      &-name {
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 2;
+        color: $grey-color;
+      }
+      &-cell {
+        font-weight: 200;
+        line-height: 1.5;
+        color: $black-color;
+      }
+    }
+  }
+  &-stack {
+    &-column {
+      &-card {
+        @include card-layout;
+        &-label {
+          font-weight: 300;
+          color: $grey-color;
+          line-height: 1.5;
+        }
+        &-value {
+          font-weight: 200;
+          color: $black-color;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $black-color;
+  color: $grey-color;
+  font-style: normal;
+  text-decoration: none;
+  &-link:link, &-link:visited, &-link:hover, &-link:active {
+    color: $grey-color;
+  }
+  &-link {
+    text-decoration: none;
+    &-icon {
+      font-family: $icon-font;
+      color: $blue-color;
+      font-style: normal;
+    }
+    &-icon::before {
+      content: attr(data-icon);
+    }
+    &-icon::after {
+      content: attr(data-title);
+      color: $grey-color;
+      font-family: $text-font;
+    }
+  }
+  &-view {
+    &-icon {
+      font-family: $icon-font;
+      color: $red-color;
+      font-style: normal;
+    }
+    &-icon::after {
+      color: $grey-color;
+      font-family: $text-font;
+    }
+  }
+}

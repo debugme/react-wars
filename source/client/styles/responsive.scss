@@ -1,0 +1,141 @@
+/* Large Display */
+@media screen and (min-width: 1851px) {
+  .header {
+    padding: 0 3em;
+  }
+  .content-stack {
+    display: none;
+  }
+  .footer {
+    padding: 0 3em;
+    &-view {
+      &-icon::before {
+        content: attr(data-icon-large);
+      }
+      &-icon::after {
+        content: attr(data-title-large);
+      }
+    }
+  }
+}
+
+/* Medium Display */
+@media screen and (max-width: 1850px) {
+  .header {
+    padding: 0 2em;
+  }
+  .content {
+    &-stack {
+      display: none;
+    }
+    &-table {
+      &-column {
+        &.large {
+          display: none;
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 0 2em;
+    &-view {
+      &-icon::before {
+        content: attr(data-icon-medium);
+      }
+      &-icon::after {
+        content: attr(data-title-medium);
+      }
+    }
+  }
+}
+
+/* Small Display */
+@media screen and (max-width: 1550px) {
+  .header {
+    padding: 0 1em;
+    &-name:last-of-type {
+      display: none;
+    }
+  }
+  .content {
+    &-stack {
+      display: flex;
+    }
+    &-table {
+      display: none;
+      &-column {
+        &.medium {
+          display: none;
+        }
+        &.large {
+          display: none;
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 0 1em;
+    &-link-icon::after {
+      content: '';
+      margin-left: 0;
+    }
+    &-view {
+      &-icon::before {
+        content: attr(data-icon-small);
+      }
+      &-icon::after {
+        content: attr(data-title-small);
+      }
+    }
+  }
+}
+
+/* Micro Display */
+@media screen and (max-width: 800px) {
+  .header {
+    padding: 0 1em;
+    &-logo {
+      display: none;
+    }
+    &-name {
+      display: none;
+    }
+  }
+  .content {
+    &-stack {
+      &-column {
+        &.small {
+          display: none;
+        }
+      }
+    }
+    &-table {
+      display: none;
+      &-column {
+        &.small {
+          display: none;
+        }
+        &.medium {
+          display: none;
+        }
+        &.large {
+          display: none;
+        }
+      }
+    }
+  }
+  .footer {
+    padding: 0 1em;
+    &-link-icon {
+      display: none;
+    }
+    &-view {
+      &-icon::before {
+        content: attr(data-icon-micro);
+      }
+      &-icon::after {
+        content: attr(data-title-micro);
+      }
+    }
+  }
+}
