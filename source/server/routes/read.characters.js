@@ -1,4 +1,4 @@
-import Character from '../../database/models/Character'
+import Character from '../../database/character.model'
 
 const readCharacters = (request, response, next) => {
   const { _id } = request.params

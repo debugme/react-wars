@@ -1,9 +1,9 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import createCharacters from './routes/createCharacters'
-import readCharacters from './routes/readCharacters'
-import updateCharacters from './routes/updateCharacters'
-import deleteCharacters from './routes/deleteCharacters'
+import createCharacters from './routes/create.characters'
+import readCharacters from './routes/read.characters'
+import updateCharacters from './routes/update.characters'
+import deleteCharacters from './routes/delete.characters'
 
 const buildServer = (options) => {
   const instance = express()

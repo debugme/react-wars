@@ -6,9 +6,9 @@ import chaiHttp from 'chai-http'
 import chaiAsPromised from 'chai-as-promised'
 
 import characters from './server.test.json'
-import Character from '../../source/database/models/Character'
-import buildServer from '../../source/server/buildServer'
-import buildDatabase from '../../source/database/buildDatabase'
+import Character from '../../source/database/character.model'
+import buildServer from '../../source/server/build.server'
+import buildDatabase from '../../source/database/build.database'
 
 describe('server route handling', () => {
 

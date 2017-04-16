@@ -1,4 +1,4 @@
-import Character from '../../database/models/Character'
+import Character from '../../database/character.model'
 
 const createCharacters = (request, response) => {
   new Character(request.body).save()

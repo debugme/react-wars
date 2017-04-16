@@ -2,8 +2,8 @@ import _ from 'lodash'
 import path from 'path'
 import dotenv from 'dotenv'
 
-import Character from '../../source/database/models/Character'
-import buildDatabase from '../../source/database/buildDatabase'
+import Character from '../../source/database/character.model'
+import buildDatabase from '../../source/database/build.database'
 import fields from './database.test.json'
 
 describe('database operation handling', () => {

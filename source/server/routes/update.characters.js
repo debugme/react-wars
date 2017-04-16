@@ -1,4 +1,4 @@
-import Character from '../../database/models/Character'
+import Character from '../../database/character.model'
 
 const updateCharacters = (request, response, next) => {
   if (Object.keys(request.body).length === 0)

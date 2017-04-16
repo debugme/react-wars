@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose'
+import { Schema } from 'mongoose'
 
-const config = {
+const details = {
   name: {
     type: String,
     required: true
@@ -41,8 +41,10 @@ const config = {
   }
 }
 
-const options = { collection: 'Characters' }
-const schema = new Schema(config, options)
-const model = mongoose.model('Characters', schema)
+const options = {
+  collection: 'Characters'
+}
 
-export default model
+const schema = new Schema(details, options)
+
+export default schema
