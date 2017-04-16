@@ -1,25 +1,24 @@
 import _ from 'lodash'
 import path from 'path'
 import dotenv from 'dotenv'
-import mongoose from 'mongoose'
 
 import Character from '../../source/database/models/Character'
+import buildDatabase from '../../source/database/buildDatabase'
 import fields from './database.test.json'
 
 describe('database operation handling', () => {
 
-  beforeAll((done) => {
-    mongoose.Promise = global.Promise
+  let testDatabase = null
+
+  beforeAll(() => {
     dotenv.config({ path: path.resolve(__dirname, '..', '.env') })
-    mongoose.connect(process.env.mongodbUri)
-      .then(() => Character.collection.remove())
-      .then(done)
+    testDatabase = buildDatabase(process.env)
   })
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => mongoose.disconnect())
-      .then(done)
+      .then(() => testDatabase.disconnect(done))
+
   })
 
   describe('create new document in characters collection', () => {

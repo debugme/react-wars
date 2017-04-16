@@ -27,8 +27,8 @@ describe('server route handling', () => {
 
   afterAll((done) => {
     Character.collection.remove()
-      .then(() => testDatabase.disconnect())
-      .then(() => testServer.close(done))
+      .then(() => testServer.close())
+      .then(() => testDatabase.disconnect(done))
   })
 
   describe('create character with POST /characters', () => {
