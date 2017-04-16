@@ -98,5 +98,775 @@
     "height": 182,
     "mass": 77,
     "is_male": true
+  },
+  {
+    "name": "Anakin Skywalker",
+    "hair_color": "blond",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "41.9BBY",
+    "height": 188,
+    "mass": 84,
+    "is_male": true
+  },
+  {
+    "name": "Wilhuff Tarkin",
+    "hair_color": "auburn, grey",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "64BBY",
+    "height": 180,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Chewbacca",
+    "hair_color": "brown",
+    "skin_color": "unknown",
+    "eye_color": "blue",
+    "birth_year": "200BBY",
+    "height": 228,
+    "mass": 112,
+    "is_male": true
+  },
+  {
+    "name": "Han Solo",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "brown",
+    "birth_year": "29BBY",
+    "height": 180,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Greedo",
+    "hair_color": "n/a",
+    "skin_color": "green",
+    "eye_color": "black",
+    "birth_year": "44BBY",
+    "height": 173,
+    "mass": 74,
+    "is_male": true
+  },
+  {
+    "name": "Jabba Desilijic Tiure",
+    "hair_color": "n/a",
+    "skin_color": "green-tan, brown",
+    "eye_color": "orange",
+    "birth_year": "600BBY",
+    "height": 175,
+    "mass": 1,
+    "is_male": false
+  },
+  {
+    "name": "Wedge Antilles",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "hazel",
+    "birth_year": "21BBY",
+    "height": 170,
+    "mass": 77,
+    "is_male": true
+  },
+  {
+    "name": "Jek Tono Porkins",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 180,
+    "mass": 110,
+    "is_male": true
+  },
+  {
+    "name": "Yoda",
+    "hair_color": "white",
+    "skin_color": "green",
+    "eye_color": "brown",
+    "birth_year": "896BBY",
+    "height": 66,
+    "mass": 17,
+    "is_male": true
+  },
+  {
+    "name": "Palpatine",
+    "hair_color": "grey",
+    "skin_color": "pale",
+    "eye_color": "yellow",
+    "birth_year": "82BBY",
+    "height": 170,
+    "mass": 75,
+    "is_male": true
+  },
+  {
+    "name": "Boba Fett",
+    "hair_color": "black",
+    "skin_color": "fair",
+    "eye_color": "brown",
+    "birth_year": "31.5BBY",
+    "height": 183,
+    "mass": 78,
+    "is_male": true
+  },
+  {
+    "name": "IG-88",
+    "hair_color": "none",
+    "skin_color": "metal",
+    "eye_color": "red",
+    "birth_year": "15BBY",
+    "height": 200,
+    "mass": 140,
+    "is_male": false
+  },
+  {
+    "name": "Bossk",
+    "hair_color": "none",
+    "skin_color": "green",
+    "eye_color": "red",
+    "birth_year": "53BBY",
+    "height": 190,
+    "mass": 113,
+    "is_male": true
+  },
+  {
+    "name": "Lando Calrissian",
+    "hair_color": "black",
+    "skin_color": "dark",
+    "eye_color": "brown",
+    "birth_year": "31BBY",
+    "height": 177,
+    "mass": 79,
+    "is_male": true
+  },
+  {
+    "name": "Lobot",
+    "hair_color": "none",
+    "skin_color": "light",
+    "eye_color": "blue",
+    "birth_year": "37BBY",
+    "height": 175,
+    "mass": 79,
+    "is_male": true
+  },
+  {
+    "name": "Ackbar",
+    "hair_color": "none",
+    "skin_color": "brown mottle",
+    "eye_color": "orange",
+    "birth_year": "41BBY",
+    "height": 180,
+    "mass": 83,
+    "is_male": true
+  },
+  {
+    "name": "Mon Mothma",
+    "hair_color": "auburn",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "48BBY",
+    "height": 150,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Arvel Crynyd",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Wicket Systri Warrick",
+    "hair_color": "brown",
+    "skin_color": "brown",
+    "eye_color": "brown",
+    "birth_year": "8BBY",
+    "height": 88,
+    "mass": 20,
+    "is_male": true
+  },
+  {
+    "name": "Nien Nunb",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 160,
+    "mass": 68,
+    "is_male": true
+  },
+  {
+    "name": "Qui-Gon Jinn",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "92BBY",
+    "height": 193,
+    "mass": 89,
+    "is_male": true
+  },
+  {
+    "name": "Nute Gunray",
+    "hair_color": "none",
+    "skin_color": "mottled green",
+    "eye_color": "red",
+    "birth_year": "unknown",
+    "height": 191,
+    "mass": 90,
+    "is_male": true
+  },
+  {
+    "name": "Finis Valorum",
+    "hair_color": "blond",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "91BBY",
+    "height": 170,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Jar Jar Binks",
+    "hair_color": "none",
+    "skin_color": "orange",
+    "eye_color": "orange",
+    "birth_year": "52BBY",
+    "height": 196,
+    "mass": 66,
+    "is_male": true
+  },
+  {
+    "name": "Roos Tarpals",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "orange",
+    "birth_year": "unknown",
+    "height": 224,
+    "mass": 82,
+    "is_male": true
+  },
+  {
+    "name": "Rugor Nass",
+    "hair_color": "none",
+    "skin_color": "green",
+    "eye_color": "orange",
+    "birth_year": "unknown",
+    "height": 206,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Ric Olié",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 183,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Watto",
+    "hair_color": "black",
+    "skin_color": "blue, grey",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 137,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Sebulba",
+    "hair_color": "none",
+    "skin_color": "grey, red",
+    "eye_color": "orange",
+    "birth_year": "unknown",
+    "height": 112,
+    "mass": 40,
+    "is_male": true
+  },
+  {
+    "name": "Quarsh Panaka",
+    "hair_color": "black",
+    "skin_color": "dark",
+    "eye_color": "brown",
+    "birth_year": "62BBY",
+    "height": 183,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Shmi Skywalker",
+    "hair_color": "black",
+    "skin_color": "fair",
+    "eye_color": "brown",
+    "birth_year": "72BBY",
+    "height": 163,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Darth Maul",
+    "hair_color": "none",
+    "skin_color": "red",
+    "eye_color": "yellow",
+    "birth_year": "54BBY",
+    "height": 175,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Bib Fortuna",
+    "hair_color": "none",
+    "skin_color": "pale",
+    "eye_color": "pink",
+    "birth_year": "unknown",
+    "height": 180,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Ayla Secura",
+    "hair_color": "none",
+    "skin_color": "blue",
+    "eye_color": "hazel",
+    "birth_year": "48BBY",
+    "height": 178,
+    "mass": 55,
+    "is_male": false
+  },
+  {
+    "name": "Dud Bolt",
+    "hair_color": "none",
+    "skin_color": "blue, grey",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 94,
+    "mass": 45,
+    "is_male": true
+  },
+  {
+    "name": "Gasgano",
+    "hair_color": "none",
+    "skin_color": "white, blue",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 122,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Ben Quadinaros",
+    "hair_color": "none",
+    "skin_color": "grey, green, yellow",
+    "eye_color": "orange",
+    "birth_year": "unknown",
+    "height": 163,
+    "mass": 65,
+    "is_male": true
+  },
+  {
+    "name": "Mace Windu",
+    "hair_color": "none",
+    "skin_color": "dark",
+    "eye_color": "brown",
+    "birth_year": "72BBY",
+    "height": 188,
+    "mass": 84,
+    "is_male": true
+  },
+  {
+    "name": "Ki-Adi-Mundi",
+    "hair_color": "white",
+    "skin_color": "pale",
+    "eye_color": "yellow",
+    "birth_year": "92BBY",
+    "height": 198,
+    "mass": 82,
+    "is_male": true
+  },
+  {
+    "name": "Kit Fisto",
+    "hair_color": "none",
+    "skin_color": "green",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 196,
+    "mass": 87,
+    "is_male": true
+  },
+  {
+    "name": "Eeth Koth",
+    "hair_color": "black",
+    "skin_color": "brown",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": 171,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Adi Gallia",
+    "hair_color": "none",
+    "skin_color": "dark",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 184,
+    "mass": 50,
+    "is_male": false
+  },
+  {
+    "name": "Saesee Tiin",
+    "hair_color": "none",
+    "skin_color": "pale",
+    "eye_color": "orange",
+    "birth_year": "unknown",
+    "height": 188,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Yarael Poof",
+    "hair_color": "none",
+    "skin_color": "white",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 264,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Plo Koon",
+    "hair_color": "none",
+    "skin_color": "orange",
+    "eye_color": "black",
+    "birth_year": "22BBY",
+    "height": 188,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Mas Amedda",
+    "hair_color": "none",
+    "skin_color": "blue",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 196,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Gregar Typho",
+    "hair_color": "black",
+    "skin_color": "dark",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": 185,
+    "mass": 85,
+    "is_male": true
+  },
+  {
+    "name": "Cordé",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": 157,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Cliegg Lars",
+    "hair_color": "brown",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "82BBY",
+    "height": 183,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Poggle the Lesser",
+    "hair_color": "none",
+    "skin_color": "green",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 183,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Luminara Unduli",
+    "hair_color": "black",
+    "skin_color": "yellow",
+    "eye_color": "blue",
+    "birth_year": "58BBY",
+    "height": 170,
+    "mass": 56,
+    "is_male": false
+  },
+  {
+    "name": "Barriss Offee",
+    "hair_color": "black",
+    "skin_color": "yellow",
+    "eye_color": "blue",
+    "birth_year": "40BBY",
+    "height": 166,
+    "mass": 50,
+    "is_male": false
+  },
+  {
+    "name": "Dormé",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": 165,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Dooku",
+    "hair_color": "white",
+    "skin_color": "fair",
+    "eye_color": "brown",
+    "birth_year": "102BBY",
+    "height": 193,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Bail Prestor Organa",
+    "hair_color": "black",
+    "skin_color": "tan",
+    "eye_color": "brown",
+    "birth_year": "67BBY",
+    "height": 191,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Jango Fett",
+    "hair_color": "black",
+    "skin_color": "tan",
+    "eye_color": "brown",
+    "birth_year": "66BBY",
+    "height": 183,
+    "mass": 79,
+    "is_male": true
+  },
+  {
+    "name": "Zam Wesell",
+    "hair_color": "blonde",
+    "skin_color": "fair, green, yellow",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 168,
+    "mass": 55,
+    "is_male": false
+  },
+  {
+    "name": "Dexter Jettster",
+    "hair_color": "none",
+    "skin_color": "brown",
+    "eye_color": "yellow",
+    "birth_year": "unknown",
+    "height": 198,
+    "mass": 102,
+    "is_male": true
+  },
+  {
+    "name": "Lama Su",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 229,
+    "mass": 88,
+    "is_male": true
+  },
+  {
+    "name": "Taun We",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 213,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Jocasta Nu",
+    "hair_color": "white",
+    "skin_color": "fair",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 167,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Ratts Tyerell",
+    "hair_color": "none",
+    "skin_color": "grey, blue",
+    "eye_color": "unknown",
+    "birth_year": "unknown",
+    "height": 79,
+    "mass": 15,
+    "is_male": true
+  },
+  {
+    "name": "R4-P17",
+    "hair_color": "none",
+    "skin_color": "silver, red",
+    "eye_color": "red, blue",
+    "birth_year": "unknown",
+    "height": 96,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Wat Tambor",
+    "hair_color": "none",
+    "skin_color": "green, grey",
+    "eye_color": "unknown",
+    "birth_year": "unknown",
+    "height": 193,
+    "mass": 48,
+    "is_male": true
+  },
+  {
+    "name": "San Hill",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "gold",
+    "birth_year": "unknown",
+    "height": 191,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Shaak Ti",
+    "hair_color": "none",
+    "skin_color": "red, blue, white",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 178,
+    "mass": 57,
+    "is_male": false
+  },
+  {
+    "name": "Grievous",
+    "hair_color": "none",
+    "skin_color": "brown, white",
+    "eye_color": "green, yellow",
+    "birth_year": "unknown",
+    "height": 216,
+    "mass": 159,
+    "is_male": true
+  },
+  {
+    "name": "Tarfful",
+    "hair_color": "brown",
+    "skin_color": "brown",
+    "eye_color": "blue",
+    "birth_year": "unknown",
+    "height": 234,
+    "mass": 136,
+    "is_male": true
+  },
+  {
+    "name": "Raymus Antilles",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": 188,
+    "mass": 79,
+    "is_male": true
+  },
+  {
+    "name": "Sly Moore",
+    "hair_color": "none",
+    "skin_color": "pale",
+    "eye_color": "white",
+    "birth_year": "unknown",
+    "height": 178,
+    "mass": 48,
+    "is_male": false
+  },
+  {
+    "name": "Tion Medon",
+    "hair_color": "none",
+    "skin_color": "grey",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": 206,
+    "mass": 80,
+    "is_male": true
+  },
+  {
+    "name": "Finn",
+    "hair_color": "black",
+    "skin_color": "dark",
+    "eye_color": "dark",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "Rey",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "hazel",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Poe Dameron",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "brown",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": true
+  },
+  {
+    "name": "BB8",
+    "hair_color": "none",
+    "skin_color": "none",
+    "eye_color": "black",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Captain Phasma",
+    "hair_color": "unknown",
+    "skin_color": "unknown",
+    "eye_color": "unknown",
+    "birth_year": "unknown",
+    "height": null,
+    "mass": null,
+    "is_male": false
+  },
+  {
+    "name": "Padmé Amidala",
+    "hair_color": "brown",
+    "skin_color": "light",
+    "eye_color": "brown",
+    "birth_year": "46BBY",
+    "height": 165,
+    "mass": 45,
+    "is_male": false
   }
 ]
