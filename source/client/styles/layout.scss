@@ -39,42 +39,24 @@ body, header, footer, main, .container  {
   &::-webkit-scrollbar {
     display: none;
   }
-  &-table-wrapper {
-    max-height: calc(100vh - 3.5em -3.5em);
-    margin: 0;
-    overflow: auto;
-    ui.table {
+  &-table {
+    &-wrapper {
+      max-height: calc(100vh - 3.5em -3.5em);
       margin: 0;
+      overflow: auto;
+      ui.table {
+        margin: 0;
+      }
     }
-    // table th:first-child {
-    //   display: none;
-    // }
-    // table tr > td:nth-child(1) {
-    //   display: none;
-    // }
+    &-row-actions {
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      .icon {
+        margin: auto 0.5em;
+      }
+    }
   }
-  // &-table-head {
-  //   margin: 0;
-  //   .ui.table {
-  //     border-radius: 0;
-  //     margin: 0;
-  //   }
-  //   table th:first-child {
-  //     display: none;
-  //   }
-  // }
-  // &-table-body {
-  //   margin: 0;
-  //   overflow: auto;
-  //   .ui.table {
-  //     border-radius: 0;
-  //     margin: 0;
-  //   }
-  //   table tr > td:nth-child(1) {
-  //     display: none;
-  //   }
-  //   max-height: calc(100vh - 13em);
-  // }
   &-info {
     display: flex;
     justify-content: center;

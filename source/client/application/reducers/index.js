@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import { readCharacters } from './readCharacters'
+import { characters } from 'CharactersReducer'
 
 export default combineReducers({
-  characters: readCharacters
+  characters: characters,
 })

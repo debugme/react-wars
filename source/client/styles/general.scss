@@ -31,6 +31,9 @@
 }
 
 .content {
+  i:hover {
+    cursor: pointer;
+  }
   &-info, &-data {
     &-card {
       @include card-layout;

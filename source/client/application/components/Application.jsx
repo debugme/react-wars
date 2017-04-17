@@ -7,7 +7,7 @@ import ReduxPromise from 'redux-promise'
 import Header from 'Header'
 import Content from 'Content'
 import Footer from 'Footer'
-import reducers from '../reducers'
+import reducers from 'Reducers'
 
 import 'GeneralStyle'
 import 'LayoutStyle'

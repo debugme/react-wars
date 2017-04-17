@@ -1,34 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { readCharacters } from '../actions/readCharacters'
+import Character from 'Character'
+import { readCharacters } from 'ReadAction'
 
 class Content extends Component {
 
   constructor(props) {
     super(props)
-    this.ENDPOINT = '/characters'
   }
 
   componentWillMount() {
-    this.props.readCharacters(this.ENDPOINT)
+    this.props.readCharacters('/characters')
   }
 
   generateTable(characters) {
-    const cols = Object.keys(characters[0]).slice(1)
-    const rows = characters.map(character => Object.values(character))
-    const tableCols = cols.map(col => <th key={col}>{col}</th>)
-    const tableRows = rows.map(row => (<tr key={`tr-${row[0]}`}>{row.slice(1).map((cell, index) => <td key={`td-${row[0]}-${index}`}>{cell + ''}</td>)}</tr>))
-
+    const cols = [...Object.keys(characters[0]).slice(1), 'actions']
+    const tableCols = <tr>{cols.map(col => <th key={col}>{col}</th>)}</tr>
+    const tableRows = characters.map((character) => <Character key={character._id} character={character}></Character>)
     const htmlFragment = (
       <div className="content-table-wrapper">
         <table className="ui selectable inverted table">
-          <thead><tr>{tableCols}</tr></thead>
+          <thead>{tableCols}</thead>
           <tbody>{tableRows}</tbody>
         </table>
       </div>
     )
-
     return htmlFragment
   }
 
