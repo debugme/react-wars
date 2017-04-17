@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getData } from '../actions/getData'
+import { readCharacters } from '../actions/readCharacters'
 
 class Content extends Component {
 
@@ -11,35 +11,43 @@ class Content extends Component {
   }
 
   componentWillMount() {
-    this.props.getData(this.ENDPOINT)
+    this.props.readCharacters(this.ENDPOINT)
   }
 
-  buildMessage(message) {
-    return <div className="content-info"><span className="content-info-card">{message}</span></div>
-  }
+  generateTable(characters) {
+    const cols = Object.keys(characters[0]).slice(1)
+    const rows = characters.map(character => Object.values(character))
+    const tableCols = cols.map(col => <th key={col}>{col}</th>)
+    const tableRows = rows.map(row => (<tr key={`tr-${row[0]}`}>{row.slice(1).map((cell, index) => <td key={`td-${row[0]}-${index}`}>{cell + ''}</td>)}</tr>))
 
-  buildUpCards(data) {
-    // ToDo...
-    // 1. Build up a sequence of cards that flow around as the browser width changes
-    return JSON.stringify(data)
+    const htmlFragment = (
+      <div className="content-table-wrapper">
+        <table className="ui selectable inverted table">
+          <thead><tr>{tableCols}</tr></thead>
+          <tbody>{tableRows}</tbody>
+        </table>
+      </div>
+    )
+
+    return htmlFragment
   }
 
   render() {
-    const { data } = this.props
-    if (data === null)
-      return this.buildMessage('Loading application...Hopefully done soon!')
-    if (data.length === 0)
-      return this.buildMessage('Hmmm. Interesting. Your database is empty!')
-    const cards = this.buildUpCards(data)
-    const html = <main className="content">{cards}</main>
+    const { characters } = this.props
+    if (characters === null)
+      return <div></div>
+    if (characters.length === 0)
+      return <div className="content-info"><span className="content-info-card">Hmmm. Interesting. Your database is empty!</span></div>
+    const table = this.generateTable(characters)
+    const html = <main className="content">{table}</main>
     return html
   }
 }
 
 const mapStateToProps =
-  state => ({ data: state.data.data })
+  state => ({ characters: state.characters.characters })
 
 const mapDispatchToProps =
-  dispatch => bindActionCreators({ getData }, dispatch)
+  dispatch => bindActionCreators({ readCharacters }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

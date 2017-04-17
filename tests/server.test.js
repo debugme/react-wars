@@ -73,11 +73,11 @@ describe('server route handling', () => {
     it('should return all characters in JSON format', (done) => {
       const keys = Object.keys(characters[0])
       const byName = (a, b) => a.name.localeCompare(b.name)
-      const getData = data => _.pick(data, keys)
+      const readCharacters = characters => _.pick(characters, keys)
       const expectData = characters.sort(byName)
       mockServer.get('/characters')
         .then((response) => {
-          const actualData = response.body.sort(byName).map(getData)
+          const actualData = response.body.sort(byName).map(readCharacters)
           expect(actualData).toEqual(expectData)
           expect(response.status).toBe(200)
           done()
@@ -87,11 +87,11 @@ describe('server route handling', () => {
     it('should return requested character in JSON format', (done) => {
       const name = characters[0].name
       const keys = Object.keys(characters[0])
-      const getData = data => _.pick(data, keys)
+      const readCharacters = data => _.pick(data, keys)
       const expectData = characters[0]
       Character.findOne({ name })
         .then(data => mockServer.get(`/characters/${data._id}`))
-        .then((response) => getData(response.body[0]))
+        .then((response) => readCharacters(response.body[0]))
         .then(actualData => expect(actualData).toEqual(expectData))
         .then(done)
     })

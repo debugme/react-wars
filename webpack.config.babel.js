@@ -9,7 +9,7 @@ const getConfiguration = () => {
   const clientConfiguration = {
 
     entry: {
-      bundle: 'source/client/application/components/Application.jsx',
+      bundle: 'source/client/application/components/application.jsx',
       vendor: ['react', 'react-dom', 'redux', 'react-redux', 'redux-promise']
     },
 
@@ -25,9 +25,9 @@ const getConfiguration = () => {
       modules: ['node_modules', __dirname],
       extensions: ['.js', '.jsx', '.css', '.scss'],
       alias: {
-        'Header': 'source/client/application/components/Header',
-        'Content': 'source/client/application/components/Content',
-        'Footer': 'source/client/application/components/Footer',
+        'Header': 'source/client/application/components/header',
+        'Content': 'source/client/application/components/content',
+        'Footer': 'source/client/application/components/footer',
         'AvatarImage': 'source/client/images/avatar.jpg',
         'GeneralStyle': 'source/client/styles/general.scss',
         'LayoutStyle': 'source/client/styles/layout.scss',
