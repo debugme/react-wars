@@ -1,8 +1,8 @@
 import dotenv from 'dotenv'
 import path from 'path'
 
-import buildDatabase from '../database/build.database'
-import buildServer from './build.server'
+import buildDatabase from './source/database/build.database'
+import buildServer from './source/server/build.server'
 
 const env = path.resolve('.env')
 dotenv.config({ path: env })

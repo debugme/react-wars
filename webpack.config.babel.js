@@ -92,7 +92,7 @@ const getConfiguration = () => {
 
   const serverConfiguration = {
     entry: {
-      server: path.join(__dirname, 'source', 'server', 'server.js')
+      server: path.join(__dirname, 'server.js')
     },
     devtool: 'eval',
     module: {
