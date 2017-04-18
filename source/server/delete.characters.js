@@ -1,8 +1,9 @@
 import Character from '../database/character.model'
 
 const deleteCharacters = (request, response) => {
-  Character.findByIdAndRemove(request.params._id)
-    .then(() => response.status(204).end())
+  const _id = request.params._id
+  Character.findByIdAndRemove(_id)
+    .then(() => response.json({ _id }))
     .catch(() => response.status(404).end())
 }
 

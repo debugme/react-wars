@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import Character from 'Character'
 import { readCharacters } from 'ReadAction'
 import { updateCharacters } from 'UpdateAction'
+import { deleteCharacters } from 'DeleteAction'
 
 class Content extends Component {
 
@@ -21,15 +22,20 @@ class Content extends Component {
       list.push(characters[_id])
 
     if (list.length === 0)
-      return (<
-        div className="content-table-wrapper">
-        <table className="ui selectable inverted table"></table><
-        /div>)
+      return (
+        <div className="content-table-wrapper">
+          <table className="ui selectable inverted table"></table>
+        </div>
+      )
 
     const byWantedFields = key => !['_id', 'is_favorite'].includes(key)
     const cols = [...Object.keys(list[0]).filter(byWantedFields), 'actions']
     const tableCols = <tr>{cols.map(col => <th key={col}>{col}</th>)}</tr>
-    const tableRows = list.map((character) => <Character key={character._id} character={character} updateCharacters={this.props.updateCharacters} />)
+    const tableRows = list.map((character) =>
+      <Character key={character._id}
+                 character={character}
+                 updateCharacters={this.props.updateCharacters}
+                 deleteCharacters={this.props.deleteCharacters} />)
 
     const htmlFragment = (
       <div className="content-table-wrapper">
@@ -58,6 +64,6 @@ const mapStateToProps =
   state => ({characters: state.characters.characters })
 
 const mapDispatchToProps =
-  dispatch => bindActionCreators({readCharacters, updateCharacters }, dispatch)
+  dispatch => bindActionCreators({readCharacters, updateCharacters, deleteCharacters }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

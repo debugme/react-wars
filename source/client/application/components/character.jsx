@@ -6,6 +6,11 @@ class Character extends Component {
     super(props)
   }
 
+  onClickKill(event) {
+    const _id = event.target.closest('tr').dataset.id
+    this.props.deleteCharacters('/characters/' + _id)
+  }
+
   onClickLike(event) {
     const is_favorite = event.target.classList.contains('empty') ? true : false
     const _id = event.target.closest('tr').dataset.id
@@ -17,11 +22,11 @@ class Character extends Component {
 
     const { _id, name, is_male, mass, height, birth_year, eye_color, skin_color, hair_color, is_favorite } = this.props.character
 
-    const likeIcon = is_favorite ?
+    const faveIcon = is_favorite ?
       <i className="icon red heart" onClick={this.onClickLike.bind(this)} /> :
       <i className="icon empty red heart" onClick={this.onClickLike.bind(this)} />
     const editIcon = <i className="icon red pencil " />
-    const killIcon = <i className="trash red outline icon" />
+    const killIcon = <i className="trash red outline icon" onClick={this.onClickKill.bind(this)}/>
 
     const html = (
       <tr data-id={`${_id}`}>
@@ -33,7 +38,7 @@ class Character extends Component {
         <td>{eye_color}</td>
         <td>{skin_color}</td>
         <td>{hair_color}</td>
-        <td><span className="content-table-row-actions">{likeIcon}{editIcon}{killIcon}</span></td>
+        <td><span className="content-table-row-actions">{faveIcon}{editIcon}{killIcon}</span></td>
       </tr>
     )
 

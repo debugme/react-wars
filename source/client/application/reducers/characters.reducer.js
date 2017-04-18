@@ -17,9 +17,12 @@ export function characters(state = { characters: null }, action) {
     characters[character._id] = character
     return { characters }
   }
-  case DELETE_CHARACTERS:
-  // ToDo...return a new state object
-    return state
+  case DELETE_CHARACTERS: {
+    const _id = action.payload._id
+    const characters = { ...state.characters }
+    delete characters[_id]
+    return { characters }
+  }
   default:
     return state
   }
