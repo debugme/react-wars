@@ -33,18 +33,18 @@ body, header, footer, main, .container  {
 }
 
 .content {
-  width: 100vw;
   min-height: calc(100vh - 3.5em - 3.5em);
-  padding: 2em 3em 2em 3em;
+  padding: 2em 2em 2em 2em;
   &::-webkit-scrollbar {
     display: none;
   }
   &-table {
     &-wrapper {
-      max-height: calc(100vh - 3.5em -3.5em);
+      display: relative;
+      max-height: calc(100vh - 3.5em - 3.5em - 2em - 2em);
       margin: 0;
       overflow: auto;
-      ui.table {
+      .ui.table {
         margin: 0;
       }
     }
