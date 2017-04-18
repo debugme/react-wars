@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { updateCharacters } from 'UpdateAction'
 
 class Character extends Component {
 
@@ -12,8 +10,7 @@ class Character extends Component {
     const is_favorite = event.target.classList.contains('empty') ? true : false
     const _id = event.target.closest('tr').dataset.id
     const fields = { is_favorite }
-    const action = updateCharacters('/characters/' + _id, _id, fields)
-    this.props.dispatch(action)
+    this.props.updateCharacters('/characters/' + _id, _id, fields)
   }
 
   render() {
@@ -45,4 +42,4 @@ class Character extends Component {
 
 }
 
-export default connect()(Character)
+export default Character

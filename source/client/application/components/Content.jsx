@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Character from 'Character'
 import { readCharacters } from 'ReadAction'
+import { updateCharacters } from 'UpdateAction'
 
 class Content extends Component {
 
@@ -18,7 +19,7 @@ class Content extends Component {
     const keys = Object.keys(characters[0]).filter(key => !['_id', 'is_favorite'].includes(key))
     const cols = [...keys, 'actions']
     const tableCols = <tr>{cols.map(col => <th key={col}>{col}</th>)}</tr>
-    const tableRows = characters.map((character) => <Character key={character._id} character={character}></Character>)
+    const tableRows = characters.map((character) => <Character key={character._id} character={character} updateCharacters={this.props.updateCharacters}></Character>)
     const htmlFragment = (
       <div className="content-table-wrapper">
         <table className="ui selectable inverted table">
@@ -46,6 +47,6 @@ const mapStateToProps =
   state => ({ characters: state.characters.characters })
 
 const mapDispatchToProps =
-  dispatch => bindActionCreators({ readCharacters }, dispatch)
+  dispatch => bindActionCreators({ readCharacters, updateCharacters }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

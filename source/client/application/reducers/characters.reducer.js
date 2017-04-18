@@ -12,17 +12,13 @@ export function characters(state = { characters: null }, action) {
   case READ_CHARACTERS:
     return { characters: action.payload }
   case UPDATE_CHARACTERS: {
-    const character = action.payload
-    const newState = { ...state }
-    for (let index = 0; index < newState.characters.length; ++index)
-      if (newState.characters[index]._id === character._id) {
-        console.log('STATE:UPDATE:BEFORE', newState.characters[index])
-        newState.characters[index] = character
-        console.log('STATE:UPDATE:AFTER', newState.characters[index])
-        break
-      }
-    return newState
-
+    const characters = []
+    for (let index = 0; index < state.characters.length; ++index)
+      if (state.characters[index]._id === action.payload._id)
+        characters.push(action.payload)
+      else
+        characters.push(state.characters[index])
+    return { characters }
   }
   case DELETE_CHARACTERS:
   // ToDo...return a new state object
