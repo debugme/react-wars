@@ -13,13 +13,7 @@ export function updateCharacters(endpoint, _id, fields) {
     method: 'PATCH',
     body: JSON.stringify(fields)
   }
-  const payload = fetch(endpoint, options)
-    .then(response => {
-      if (response.status === 200)
-        return { _id: _id, ...fields }
-      else
-        return null
-    })
+  const payload = fetch(endpoint, options).then(response => response.json())
   const action = { type, payload }
   return action
 }

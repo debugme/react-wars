@@ -9,9 +9,9 @@ class Character extends Component {
   }
 
   onClickLike(event) {
-    // const is_favorite = event.target.classList.contains('empty') ? true : false
+    const is_favorite = event.target.classList.contains('empty') ? true : false
     const _id = event.target.closest('tr').dataset.id
-    const fields = { eye_color: 'blue' }
+    const fields = { is_favorite }
     const action = updateCharacters('/characters/' + _id, _id, fields)
     this.props.dispatch(action)
   }

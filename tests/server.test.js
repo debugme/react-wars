@@ -138,7 +138,7 @@ describe('server route handling', () => {
 
     it('should not update a character when incorrect id is provided', (done) => {
       const options = { name: characters[0].name }
-      const updates = { ear_color: 'purple' }
+      const updates = { hair_color: 'purple' }
       Character.findOne(options)
         .then(character => `/characters/${character.name}`)
         .then(query => mockServer.patch(query).send(updates))

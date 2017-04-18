@@ -40,7 +40,6 @@ body, header, footer, main, .container  {
   }
   &-table {
     &-wrapper {
-      display: relative;
       max-height: calc(100vh - 3.5em - 3.5em - 2em - 2em);
       margin: 0;
       overflow: auto;

@@ -38,6 +38,11 @@ const details = {
   is_male: {
     type: Boolean,
     required: true
+  },
+  is_favorite: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 }
 
