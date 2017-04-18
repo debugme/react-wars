@@ -9,8 +9,8 @@ const getConfiguration = () => {
   const clientConfiguration = {
 
     entry: {
-      bundle: './source/client/application/components/application.jsx',
-      vendor: ['react', 'react-dom', 'redux', 'react-redux', 'redux-promise']
+      bundle: 'source/client/application/components/application.jsx',
+      vendor: ['react', 'whatwg-fetch', 'react-dom', 'redux', 'react-redux', 'redux-promise']
     },
 
     output: {
