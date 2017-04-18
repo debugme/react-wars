@@ -16,26 +16,37 @@ class Content extends Component {
   }
 
   generateTable(characters) {
-    const keys = Object.keys(characters[0]).filter(key => !['_id', 'is_favorite'].includes(key))
-    const cols = [...keys, 'actions']
+    const list = []
+    for (let _id in characters)
+      list.push(characters[_id])
+
+    if (list.length === 0)
+      return (<
+        div className="content-table-wrapper">
+        <table className="ui selectable inverted table"></table><
+        /div>)
+
+    const byWantedFields = key => !['_id', 'is_favorite'].includes(key)
+    const cols = [...Object.keys(list[0]).filter(byWantedFields), 'actions']
     const tableCols = <tr>{cols.map(col => <th key={col}>{col}</th>)}</tr>
-    const tableRows = characters.map((character) => <Character key={character._id} character={character} updateCharacters={this.props.updateCharacters}></Character>)
+    const tableRows = list.map((character) => <Character key={character._id} character={character} updateCharacters={this.props.updateCharacters} />)
+
     const htmlFragment = (
       <div className="content-table-wrapper">
-        <table className="ui selectable inverted table">
-          <thead>{tableCols}</thead>
-          <tbody>{tableRows}</tbody>
-        </table>
-      </div>
-    )
+          <table className="ui selectable inverted table">
+            <thead>{tableCols}</thead>
+            <tbody>{tableRows}</tbody>
+          </table>
+        </div>
+        )
     return htmlFragment
   }
 
   render() {
-    const { characters } = this.props
+    const {characters} = this.props
     if (characters === null)
       return <div></div>
-    if (characters.length === 0)
+    if (Object.keys(characters).length === 0)
       return <div className="content-info"><span className="content-info-card">Hmmm. Interesting. Your database is empty!</span></div>
     const table = this.generateTable(characters)
     const html = <main className="content">{table}</main>
@@ -44,9 +55,9 @@ class Content extends Component {
 }
 
 const mapStateToProps =
-  state => ({ characters: state.characters.characters })
+  state => ({characters: state.characters.characters })
 
 const mapDispatchToProps =
-  dispatch => bindActionCreators({ readCharacters, updateCharacters }, dispatch)
+  dispatch => bindActionCreators({readCharacters, updateCharacters }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

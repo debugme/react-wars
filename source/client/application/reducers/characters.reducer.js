@@ -12,12 +12,9 @@ export function characters(state = { characters: null }, action) {
   case READ_CHARACTERS:
     return { characters: action.payload }
   case UPDATE_CHARACTERS: {
-    const characters = []
-    for (let index = 0; index < state.characters.length; ++index)
-      if (state.characters[index]._id === action.payload._id)
-        characters.push(action.payload)
-      else
-        characters.push(state.characters[index])
+    const character = action.payload
+    const characters = { ...state.characters }
+    characters[character._id] = character
     return { characters }
   }
   case DELETE_CHARACTERS:

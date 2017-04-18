@@ -5,7 +5,13 @@ const readCharacters = (request, response, next) => {
   const query = _id ? { _id } : { }
   Character.find(query)
     .then((items) => {
-      response.json(items)
+      const itemSet = {}
+      const reducer = (set, val) => {
+        set[val._id] = val
+        return set
+      }
+      items.reduce(reducer, itemSet)
+      response.json(itemSet)
     })
     .catch(error => {
       response.status(400)

@@ -71,13 +71,14 @@ describe('server route handling', () => {
     })
 
     it('should return all characters in JSON format', (done) => {
-      const keys = Object.keys(characters[0])
       const byName = (a, b) => a.name.localeCompare(b.name)
-      const readCharacters = characters => _.pick(characters, keys)
-      const expectData = characters.sort(byName)
+      const keys = Object.keys(characters[0])
+      const byWantedKeys = item => _.pick(item, keys)
       mockServer.get('/characters')
         .then((response) => {
-          const actualData = response.body.sort(byName).map(readCharacters)
+          const items = Object.values(response.body)
+          const actualData = items.map(byWantedKeys).sort(byName)
+          const expectData = characters.slice(0).sort(byName)
           expect(actualData).toEqual(expectData)
           expect(response.status).toBe(200)
           done()
@@ -87,13 +88,15 @@ describe('server route handling', () => {
     it('should return requested character in JSON format', (done) => {
       const name = characters[0].name
       const keys = Object.keys(characters[0])
-      const readCharacters = data => _.pick(data, keys)
       const expectData = characters[0]
       Character.findOne({ name })
         .then(data => mockServer.get(`/characters/${data._id}`))
-        .then((response) => readCharacters(response.body[0]))
-        .then(actualData => expect(actualData).toEqual(expectData))
-        .then(done)
+        .then((response) => {
+          const item = Object.values(response.body)[0]
+          const actualData = _.pick(item, keys)
+          expect(actualData).toEqual(expectData)
+          done()
+        })
     })
 
     it('should return error for invalid requested character', (done) => {
