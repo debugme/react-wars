@@ -20,6 +20,7 @@ describe('server route handling', () => {
     chai.use(chaiHttp)
     chai.use(chaiAsPromised)
     dotenv.config({ path: path.resolve(__dirname, '.env') })
+    process.env.PORT = process.env.port || 3010
     testServer = buildServer(process.env)
     mockServer = chai.request(testServer)
     testDatabase = buildDatabase(process.env)

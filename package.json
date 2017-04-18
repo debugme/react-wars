@@ -1,19 +1,29 @@
 {
-  "name": "swapi",
+  "name": "react-wars",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "React + Redux + Sass + Express + MongoDB + Webpack + Node",
+  "main": "server.js",
+  "engines": {
+    "node": "7.8.0"
+  },
   "scripts": {
     "clean": "rm -rf node_modules/ coverage/ build/",
     "build": "webpack",
     "test": "jest --runInBand --coverage",
     "start": "node build/server/server",
     "lint": "eslint source tests",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "postinstall": "webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debugme/react-wars.git"
+  },
+  "author": "Asad Razvi <debugme@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/debugme/react-wars/issues"
+  },
   "dependencies": {
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",

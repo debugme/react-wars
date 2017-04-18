@@ -7,6 +7,8 @@ import buildServer from './source/server/build.server'
 const env = path.resolve('.env')
 dotenv.config({ path: env })
 
+process.env.PORT = process.env.PORT || 3000
+
 const database = buildDatabase(process.env)
 const server = buildServer(process.env)
 
