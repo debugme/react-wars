@@ -8,12 +8,12 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules/ coverage/ build/",
-    "build": "webpack",
+    "build": "node_modules/.bin/webpack",
     "test": "jest --runInBand --coverage",
     "start": "node build/server/server",
     "lint": "eslint source tests",
     "precommit": "npm run lint",
-    "postinstall": "webpack"
+    "postinstall": "node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
