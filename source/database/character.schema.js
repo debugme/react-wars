@@ -43,6 +43,11 @@ const details = {
     type: Boolean,
     required: true,
     default: false
+  },
+  is_editable: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 }
 

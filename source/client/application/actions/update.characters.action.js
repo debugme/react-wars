@@ -3,7 +3,6 @@ import 'whatwg-fetch'
 export const UPDATE_CHARACTERS = 'UPDATE_CHARACTERS'
 
 export function updateCharacters(endpoint, _id, fields) {
-  console.log('ACTION: update_characters')
   const type = UPDATE_CHARACTERS
   const options = {
     headers: {
@@ -13,6 +12,7 @@ export function updateCharacters(endpoint, _id, fields) {
     method: 'PATCH',
     body: JSON.stringify(fields)
   }
+
   const payload = fetch(endpoint, options).then(response => response.json())
   const action = { type, payload }
   return action

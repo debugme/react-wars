@@ -16,6 +16,15 @@ class Content extends Component {
     this.props.readCharacters('/characters')
   }
 
+  onClickMake() {
+    console.log('ToDo...Allow User to add a new character')
+  }
+
+  toTitleCase(value){
+    // http://stackoverflow.com/questions/21792367/replace-underscores-with-spaces-and-capitalize-words
+    return value.replace(/(?:_| |\b)(\w)/g, ($1) =>  $1.toUpperCase().replace('_',' '))
+  }
+
   generateTable(characters) {
     const list = []
     for (let _id in characters)
@@ -28,9 +37,10 @@ class Content extends Component {
         </div>
       )
 
-    const byWantedFields = key => !['_id', 'is_favorite'].includes(key)
-    const cols = [...Object.keys(list[0]).filter(byWantedFields), 'actions']
-    const tableCols = <tr>{cols.map(col => <th key={col}>{col}</th>)}</tr>
+    const makeAction = <th><i className="add user icon content-table-actions" onClick={this.onClickMake.bind(this)}></i></th>
+    const byWantedFields = key => !['_id', 'is_favorite', 'is_editable'].includes(key)
+    const cols = Object.keys(list[0]).filter(byWantedFields)
+    const tableCols = <tr>{cols.map(col => <th key={col}>{this.toTitleCase(col)}</th>)}{makeAction}</tr>
     const tableRows = list.map((character) =>
       <Character key={character._id}
                  character={character}
