@@ -7,8 +7,10 @@ import updateCharacters from './update.characters'
 import deleteCharacters from './delete.characters'
 
 const buildServer = (options) => {
+
   const instance = express()
   const root = path.resolve('./build/client')
+
   instance.use(express.static(root))
   instance.use(bodyParser.json())
   instance.use(bodyParser.urlencoded({ extended: true }))
@@ -18,6 +20,7 @@ const buildServer = (options) => {
   instance.delete('/characters/:_id', deleteCharacters)
   instance.patch('/characters/:_id', updateCharacters)
   instance.get('/*', (request, response) => response.sendFile('index.html', { root }))
+
   const port = parseInt(options.PORT, 10)
   const done = () => console.log(`server: http://localhost:${port}`)
   const server = instance.listen(port, done)

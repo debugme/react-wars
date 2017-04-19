@@ -1,7 +1,7 @@
 {
   "name": "react-wars",
   "version": "1.0.0",
-  "description": "React + Redux + Sass + Express + MongoDB + Webpack + Node",
+  "description": "React + Redux + Sass + Express + MongoDB + Webpack + Jest",
   "main": "server.js",
   "engines": {
     "node": "7.6.0"
