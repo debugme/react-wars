@@ -37,7 +37,8 @@ const details = {
   },
   is_male: {
     type: Boolean,
-    required: true
+    required: false,
+    default: false
   },
   is_favorite: {
     type: Boolean,

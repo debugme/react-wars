@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Character from 'Character'
+import { createCharacters } from 'CreateAction'
 import { readCharacters } from 'ReadAction'
 import { updateCharacters } from 'UpdateAction'
 import { deleteCharacters } from 'DeleteAction'
@@ -17,7 +18,11 @@ class Content extends Component {
   }
 
   onClickMake() {
-    console.log('ToDo...Allow User to add a new character')
+    const fields = {
+      name: '_fill_me_',
+      is_editable: true
+    }
+    this.props.createCharacters('/characters', fields)
   }
 
   toTitleCase(value){
@@ -40,7 +45,7 @@ class Content extends Component {
       )
 
     const makeAction = <th><i className="add user icon content-table-actions" onClick={this.onClickMake.bind(this)}></i></th>
-    const byWantedFields = key => !['_id', 'is_favorite', 'is_editable'].includes(key)
+    const byWantedFields = key => !['__v', '_id', 'is_favorite', 'is_editable'].includes(key)
     const cols = Object.keys(list[0]).filter(byWantedFields)
     const tableCols = <tr>{cols.map(col => <th key={col}>{this.toTitleCase(col)}</th>)}{makeAction}</tr>
     const tableRows = list.map((character) =>
@@ -76,6 +81,6 @@ const mapStateToProps =
   state => ({characters: state.characters.characters })
 
 const mapDispatchToProps =
-  dispatch => bindActionCreators({readCharacters, updateCharacters, deleteCharacters }, dispatch)
+  dispatch => bindActionCreators({createCharacters, readCharacters, updateCharacters, deleteCharacters }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)

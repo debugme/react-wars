@@ -46,11 +46,21 @@ describe('server route handling', () => {
         .then(done)
     })
 
-    it('should not create a character when no data is provided', (done) => {
+    it('should not create a character when incorrect data is provided', (done) => {
       mockServer.post('/characters')
+      .send({banana: 'fruit'})
         .catch((error) => {
           expect(error.response.error.status).toBe(400)
           expect(error.response.error.toString()).toBe('Error: cannot POST /characters (400)')
+          done()
+        })
+    })
+
+    it('should not create a character when no data is provided', (done) => {
+      mockServer.post('/characters')
+        .catch((error) => {
+          expect(error.response.error.status).toBe(422)
+          expect(error.response.error.toString()).toBe('Error: cannot POST /characters (422)')
           done()
         })
     })
@@ -200,7 +210,7 @@ describe('server route handling', () => {
         .then(character => `/characters/${character._id}`)
         .then(query => mockServer.delete(query))
         .then(response => {
-          expect(response.status).toBe(200)
+          expect(response.status).toBe(204)
           Character.findOne(options)
             .then(character => {
               expect(character).toBe(null)

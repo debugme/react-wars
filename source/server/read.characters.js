@@ -11,7 +11,7 @@ const readCharacters = (request, response, next) => {
         return set
       }
       items.reduce(reducer, itemSet)
-      response.json(itemSet)
+      response.status(200).json(itemSet)
     })
     .catch(error => {
       response.status(400)
