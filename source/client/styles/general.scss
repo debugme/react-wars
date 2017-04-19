@@ -31,6 +31,9 @@
 }
 
 .content {
+  &-table-wrapper {
+    border-radius: .28571429rem;
+  }
   i:hover {
     cursor: pointer;
   }
