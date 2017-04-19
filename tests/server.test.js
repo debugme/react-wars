@@ -210,7 +210,7 @@ describe('server route handling', () => {
         .then(character => `/characters/${character._id}`)
         .then(query => mockServer.delete(query))
         .then(response => {
-          expect(response.status).toBe(204)
+          expect(response.status).toBe(200)
           Character.findOne(options)
             .then(character => {
               expect(character).toBe(null)
