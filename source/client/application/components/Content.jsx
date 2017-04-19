@@ -26,9 +26,11 @@ class Content extends Component {
   }
 
   generateTable(characters) {
+    const byName = (a, b) => a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase())
     const list = []
     for (let _id in characters)
       list.push(characters[_id])
+    list.sort(byName)
 
     if (list.length === 0)
       return (
