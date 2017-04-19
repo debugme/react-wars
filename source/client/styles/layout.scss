@@ -46,6 +46,9 @@ body, header, footer, main, .container  {
       max-height: calc(100vh - 3.5em - 3.5em - 2em - 2em);
       margin: 0;
       overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .ui.table {
         margin: 0;
       }
