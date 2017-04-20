@@ -3,7 +3,33 @@
 [https://react-wars.now.sh/](https://react-wars.now.sh/)
 
 # Introduction
-This demonstrates one approach to building a modern full-stack CRUD application. It uses React and Redux for the frontend view and state management. The frontend is served by an http server written in Express and running on Node. RESTful calls are made by the frontend to the server, which in turn translates them into calls to a remote Mongo database. The responses are marshalled back to the frontend as JSON payloads which are then used for appropriate update. The application has also been deployed to the Zeit Cloud for demo purposes.
+This application shows how to build a 3-tier (client-server-database) application deployed in the Cloud
+* The client uses React to compose the view out of modular, decoupled components whose state is managed by Redux, layout by FlexBox and styling by Sass
+* The server uses Express on Node to provide an http server that serves the client as well as providing RESTful endpoints for the client to use
+* The database uses MongoDB to store the character data and Mongoose to provide schemas to facilitate constrained interaction between the client and the database
+* The tests use Jest as a test runner and to build test suites; Chai is used to write the assertions for each test
+* The application client and server are transpiled with Babel and bundled with Webpack to allow for use of the latest features
+* The entire application has been deployed to the Zeit Cloud to make it simpler for a User to play around with without having to go through the installation steps
+
+# Architecture
+The application is made up of a driver, client, server, database and tests. These components are intentionally decoupled from each other. This provides the benefits listed below:
+* changes to the driver, client, server, database and tests can be made independently of each other
+* understanding the application is simpler as at the top level it is made up of coarse granularity sub-systems
+
+# Driver
+* The purpose of the driver is to provide an entry point into the application. It reads a database URI from an environment file and connects to a remote database.
+
+# Client
+* The purpose of the client is to define a responsive front-end that can be served by an http server and loaded into a browser. It provides the ability to display the characters in the database as well as provide the ability to create, update and delete chaaracters. It is split into components, actions, reducers and asset files.
+
+# Server
+* The purpose of the server is to serve the bundled up client to a web browser. It provides CRUD RESTful endpoints which the client can invoke to facilitate running commands/queries against the database.
+
+# Database
+* The purpose of the database is two-fold. It serves as a persistent store for character data. It also provides CRUD operations with which to retrieve/mutate information for a client. It is located remotely to simplify the installation and running of this application.
+
+# Tests
+* The purpose of the tests is to provide confidence that the database, server and client have been written correctly. We have good test coverage for the database and server components for now. In the future we hope to extend this coverage to the client.
 
 # Interesting things about this application
 1. MongoDB and Mongoose Schema for data persistence and validation
