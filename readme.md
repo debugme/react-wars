@@ -38,36 +38,57 @@ This demonstrates one approach to building a modern full-stack CRUD application.
 
 # Build Steps
 
-   Open up a Terminal command line session
-   ```
-   $
-   ```
+Open up a Terminal command line session
+```
+$
+```
 
-   Download the project code from GitHub
-   ```
-   $ git clone https://github.com/debugme/react-wars.git
-   ```
+Download the project code from GitHub
+```
+$ git clone https://github.com/debugme/react-wars.git
+```
 
-   Navigate into the downloaded folder
-   ```
-   $ cd react-wars
-   ```
+Navigate into the downloaded folder
+```
+$ cd react-wars
+```
 
-   Install the project dependencies
-   ```
-   $ npm install
-   ```
+Install the project dependencies
+```
+$ npm install
+```
 
 # Run Steps
 
-   Start up the server
-   ```
-   $ npm start
-   ```
-   Open your browser at
-   ```
-   http://localhost:3000
-   ```
+Start up the server
+```
+$ npm start
+```
+Open your browser at
+```
+http://localhost:3000
+```
+
+# Use Steps
+
+* The information for each character is displayed as a row in a table
+* If you click the icon the header of the last column, a new character row is added
+* You can designate whether a character is a favorite or not by toggling the heart icon in its row
+* You can designate whether a character is editable or not by toggling the lock icon in its row
+ * When the lock icon is open and green, the character fields can be edited
+ * When the lock icon is closed and red, any changes you have made are saved and the character cannot be changed
+* You can delete a character by clicking the trash can icon in its row
+
+# Test Steps
+
+Run the tests
+```
+$ npm test
+```
+View the test results in your browser
+```
+$ open coverage/lcov-report/index.html
+```
 
 # Technology Stack
 
