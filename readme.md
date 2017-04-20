@@ -31,33 +31,18 @@ The application is made up of a driver, client, server, database and tests. Thes
 # Tests
 * The purpose of the tests is to provide confidence that the database, server and client have been written correctly. We have good test coverage for the database and server components for now. In the future we hope to extend this coverage to the client.
 
-# Interesting things about this application
-1. MongoDB and Mongoose Schema for data persistence and validation
-2. Node and Express to provide RESTful server-side endpoints
-3. React for front-end component visualization
-4. Redux for front-end state management
-5. FlexBox for responsive UI
-6. Sass to allow for writing more declarative, succint CSS
-7. Jest test framework with Chai assertion library for tests
-8. Comprehensive tests for database layer and server layer
-9. Deployed in Zeit (A much more expedient approach than Heroku, Digital Ocean, Azure or AWS)
-10. Application assets split into app bundle and vendor bundle to leverage browser caching
-11. Assets named in a way to allow for cache-busting to ensure future changes available to users
-12. Webpack used to bundle both the client-side and server-side code
-
-# Things I would have liked to do if I had more time
-1. No tests for store, actions, reducers
-2. Better UI for CRUD functionality (No validation of values added into input fields)
-3. Pagination and Filtering currently missing from frontend
-4. Tests for Redux state management (i.e. event -> actions -> reducer -> state) missing
-5. Tests for React components (e.g. correct event handling) missing
-6. Perhaps add a DSL REPL to the application to show how to interact with it via a different UI
-7. Superior responsive design e.g. table splits into columnar card view as browser resizes
-8. Accessibility concerns addressed (Currently not being handled)
-9. Performance snapshot and tuning (Currently not being handled)
-10. UX feedback and integration back into the product
-11. Investigate the use of GraphQL as an alternative to exposing RESTful endpoints
-12. Better consideration of edge cases and error handling when database/server down/laggy
+# Wishlist (Or things I wish I could have done if I had more time...)
+* Better UI for CRUD functionality (No validation of values added into input fields)
+* Pagination and Filtering currently missing from frontend
+* Tests for Redux state management missing (i.e. event -> actions -> reducer -> state)
+* Tests for React components missing (e.g. correct event handling)
+* Perhaps add a DSL REPL to the application to show how to interact with it via a different UI
+* Superior responsive design e.g. table splits into columnar card view as browser resizes
+* Accessibility concerns addressed (Currently not being handled)
+* Performance snapshot and tuning (Currently not being handled)
+* UX feedback and integration back into the product
+* Investigate the use of GraphQL as an alternative to exposing RESTful endpoints
+* Better consideration of edge cases and error handling when database/server/network down/laggy
 
 # Install Steps
 * Install [Node 7.8.0](https://nodejs.org/en/)
@@ -98,11 +83,11 @@ http://localhost:3000
 # Use Steps
 
 * The information for each character is displayed as a row in a table
-* If you click the icon the header of the last column, a new character row is added
+* If you click the icon in the header of the last column, a new character row is added
 * You can designate whether a character is a favorite or not by toggling the heart icon in its row
 * You can designate whether a character is editable or not by toggling the lock icon in its row
  * When the lock icon is open and green, the character fields can be edited
- * When the lock icon is closed and red, any changes you have made are saved and the character cannot be changed
+ * When the lock icon is closed and red, any changes you have made are saved and the character cannot be edited
 * You can delete a character by clicking the trash can icon in its row
 
 # Test Steps
@@ -125,5 +110,7 @@ $ open coverage/lcov-report/index.html
 * [Node](https://nodejs.org/en/) - used to host the application server
 * [Express](http://expressjs.com) - used to serve the web application to the browser
 * [MongoDB](https://www.mongodb.com) - used to store character information between sessions
+* [Mongoose] (http://mongoosejs.com/) - used to define schemas to control interaction with MongoDB
 * [Jest](https://facebook.github.io/jest/) - used to write tests for the various components
+* [Chai](http://chaijs.com/) - used to provide assertions for the tests
 * [Zeit](https://zeit.co/) - used to deploy the application to the Web to play around with
