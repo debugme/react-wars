@@ -1,10 +1,13 @@
 {
   "name": "react-wars",
   "version": "1.0.0",
-  "description": "React + Redux + Sass + Express + MongoDB + Webpack + Jest",
+  "description": "A simple web application providing CRUD features",
+  "keywords": [
+    "React", "Redux", "Sass", "Express", "Node", "MongoDB", "Mongoose", "Webpack", "Jest"
+  ],
   "main": "server.js",
   "engines": {
-    "node": "7.6.0"
+    "node": "7.8.0"
   },
   "scripts": {
     "clean": "rm -rf node_modules/ coverage/ build/",
@@ -12,8 +15,7 @@
     "test": "jest --runInBand --coverage",
     "start": "forever build/server/server.js",
     "lint": "eslint source tests",
-    "precommit": "npm run lint",
-    "postinstall": "webpack"
+    "deploy": "now && now alias"
   },
   "repository": {
     "type": "git",
@@ -77,6 +79,18 @@
         "statements": 100
       }
     }
+  },
+  "now": {
+    "name": "react-wars",
+    "alias": "react-wars"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "es2016",
+      "es2017",
+      "stage-0",
+      "react"
+    ]
   }
 }
-
