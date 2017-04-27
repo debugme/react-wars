@@ -31,19 +31,6 @@ The application is made up of a driver, client, server, database and tests. Thes
 # Tests
 * The purpose of the tests is to provide confidence that the database, server and client have been written correctly. We have good test coverage for the database and server components for now. In the future we hope to extend this coverage to the client.
 
-# Wishlist (Or things I wish I could have done if I had more time...)
-* Better UI for CRUD functionality (No validation of values added into input fields)
-* Pagination and Filtering currently missing from frontend
-* Tests for Redux state management missing (i.e. event -> actions -> reducer -> state)
-* Tests for React components missing (e.g. correct event handling)
-* Perhaps add a DSL REPL to the application to show how to interact with it via a different UI
-* Superior responsive design e.g. table splits into columnar card view as browser resizes
-* Accessibility concerns addressed (Currently not being handled)
-* Performance snapshot and tuning (Currently not being handled)
-* UX feedback and integration back into the product
-* Investigate the use of GraphQL as an alternative to exposing RESTful endpoints
-* Better consideration of edge cases and error handling when database/server/network down/laggy
-
 # Install Steps
 * Install [Node 7.8.0](https://nodejs.org/en/)
 
