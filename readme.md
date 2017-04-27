@@ -73,7 +73,7 @@ $ npm install
 
 Start up the server
 ```
-$ npm start
+$ port=3000 mongodburi=<add-mongodb-uri-here> npm start
 ```
 Open your browser at
 ```

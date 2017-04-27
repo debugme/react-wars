@@ -21,7 +21,7 @@ const buildServer = (options) => {
   instance.patch('/characters/:_id', updateCharacters)
   instance.get('/*', (request, response) => response.sendFile('index.html', { root }))
 
-  const port = parseInt(options.PORT, 10)
+  const port = parseInt(options.port, 10)
   const done = () => console.log(`server: http://localhost:${port}`)
   const server = instance.listen(port, done)
   return server
