@@ -110,7 +110,7 @@ $ open coverage/lcov-report/index.html
 * [Node](https://nodejs.org/en/) - used to host the application server
 * [Express](http://expressjs.com) - used to serve the web application to the browser
 * [MongoDB](https://www.mongodb.com) - used to store character information between sessions
-* [Mongoose] (http://mongoosejs.com/) - used to define schemas to control interaction with MongoDB
+* [Mongoose](http://mongoosejs.com/) - used to define schemas to control interaction with MongoDB
 * [Jest](https://facebook.github.io/jest/) - used to write tests for the various components
 * [Chai](http://chaijs.com/) - used to provide assertions for the tests
 * [Zeit](https://zeit.co/) - used to deploy the application to the Web to play around with
