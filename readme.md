@@ -1,7 +1,3 @@
-# Demo
-
-[https://react-wars.now.sh/](https://react-wars.now.sh/)
-
 # Introduction
 This application shows how to build a 3-tier (client-server-database) application deployed in the Cloud
 * The client uses React to compose the view out of modular, decoupled components whose state is managed by Redux, layout by FlexBox and styling by Sass
